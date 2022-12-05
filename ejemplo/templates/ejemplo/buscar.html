@@ -9,7 +9,21 @@
 </head>
 
 <body>
-    {{resultado}}
+    <h1>buscar familiar por nombre</h1>
+
+    <form action="/mi-familia/buscar" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+
+    {% for familiar in lista_familiares %}
+    <ul>
+        <li> Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}
+        </li>
+    </ul>
+    {% endfor %}
+
 </body>
 
 </html>
