@@ -4,9 +4,14 @@
 Lista de familiares
 {% endblock %}
 {%block contenido%}
+    <a href="/mi-familia/alta">Nuevo Familiar</a>
     <ul>
     {% for familiar in lista_familiares %}
-        <li>Id: {{familiar.id}} Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}</li>
+        <li>
+            Id: {{familiar.id}} Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}
+            <a href="/mi-familia/actualizar/{{ familiar.id }}">Actulizar</a>
+            <a href="/mi-familia/borrar/{{ familiar.id }}">Borrar</a>
+        </li>
     {% endfor %}
     </ul>
 {% endblock %}
