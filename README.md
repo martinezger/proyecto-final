@@ -6,4 +6,4 @@ Este es un commit antes del conflicto
 
 Simulacro de Conflicto
 
-# Crudo de Post para Proyecto Final
+# Crud de Post para Proyecto Final
