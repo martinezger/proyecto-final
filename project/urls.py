@@ -14,14 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path
 from django.views.generic import TemplateView
+from django.contrib.admin.views.decorators import staff_member_required
 from ejemplo.views import (index, saludar_a, sumar, 
                             buscar, monstrar_familiares,
                             BuscarFamiliar, AltaFamiliar,
                             ActualizarFamiliar, BorrarFamiliar,
                             FamiliarList, FamiliarCrear, FamiliarBorrar, FamiliarActualizar, FamiliarDetalle)
-from ejemplo_dos.views import index, PostDetalle, PostListar, PostCrear, PostBorrar, PostActualizar
+from ejemplo_dos.views import index_ejemplo_dos, PostDetalle, PostListar, PostCrear, PostBorrar, PostActualizar, UserLogin, UserLogout, UserSignUp
+from django.contrib.admin.views.decorators import staff_member_required
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -40,10 +44,14 @@ urlpatterns = [
     path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view()),
     path('panel-familia/<int:pk>/detalle', FamiliarDetalle.as_view()),
     path('success_updated_message/',TemplateView.as_view(template_name="ejemplo/success_updated_message.html")),
-    path('ejemplo-dos/', index, name="ejemplo-dos-index"),
+    path('ejemplo-dos/', index_ejemplo_dos, name="ejemplo-dos-index"),
     path('ejemplo-dos/<int:pk>/detalle/', PostDetalle.as_view(), name="ejemplo-dos-detalle"),
     path('ejemplo-dos/listar/', PostListar.as_view(), name="ejemplo-dos-listar"),
     path('ejemplo-dos/crear/', PostCrear.as_view(), name="ejemplo-dos-crear"),
     path('ejemplo-dos/<int:pk>/borrar/', PostBorrar.as_view(), name="ejemplo-dos-borrar"),
     path('ejemplo-dos/<int:pk>/actualizar/', PostActualizar.as_view(), name="ejemplo-dos-actualizar"),
+    path('ejemplo-dos/login', UserLogin.as_view(), name='ejemplo-dos-login'),
+    path('ejemplo-dos/logout', UserLogout.as_view(), name='ejemplo-dos-logout'),
+    path('ejemplo-dos/signup', UserSignUp.as_view(), name='ejemplo-dos-signup'),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
