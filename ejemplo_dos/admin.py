@@ -1,3 +1,5 @@
 from django.contrib import admin
+from ejemplo_dos.models import WebSiteSetup, Avatar
 
-# Register your models here.
+admin.site.register(WebSiteSetup)
+admin.site.register(Avatar)

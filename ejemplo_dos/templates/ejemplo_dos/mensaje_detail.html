@@ -1,0 +1,23 @@
+{% extends 'ejemplo_dos/base.html' %}
+
+
+{% block contenido %}
+    <div>
+        De: {{object.nombre}}
+    </div>
+    <div>
+        Email contacto: {{object.email}}
+    </div>
+    <div>
+        <p>
+            Mensaje:
+            <br> 
+            {{object.texto}}
+        </p>
+    </div>
+    <div>
+        Enviado el: {{object.enviado_el}}
+    </div>
+    <br>
+    <a href="{% url 'ejemplo-dos-mensajes-listar' %}">Lista de Mensajes</a>
+{% endblock %}

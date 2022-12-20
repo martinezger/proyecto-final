@@ -1,9 +1,22 @@
 {% extends 'ejemplo_dos/base.html' %}
 
 {% block contenido %}
-    <h1>{{object.titulo}}</h1>
-    <h2>{{object.sub_titulo}}</h2>
-    <div>
-        {{object.texto}}
+<div class="d-flex justify-content-center">
+        <h1>{{object.titulo}}</h1>
+</div>
+<div class="d-flex justify-content-center">
+        <h2>{{object.sub_titulo}}</h2>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="d-flex justify-content-end">
+            <img height="256" src="{{object.imagen.url}}">
+        </div>
     </div>
+    <div class="col">
+        <div class="d-flex justify-content-start">
+            {{object.texto}}
+        </div>
+    </div>
+</div>
 {% endblock %}
