@@ -1,5 +1,9 @@
 {% extends 'ejemplo_dos/base.html' %}
 
 {% block contenido %}
-    {{object.titulo}}
+    <h1>{{object.titulo}}</h1>
+    <h2>{{object.sub_titulo}}</h2>
+    <div>
+        {{object.texto}}
+    </div>
 {% endblock %}
