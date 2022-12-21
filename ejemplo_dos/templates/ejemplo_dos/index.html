@@ -10,7 +10,7 @@
             <!-- Featured blog post-->
             <div class="card mb-4">
                 {% if posts.0 %}
-                <a href="#!"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                <a href="#!"><img class="card-img-top" src="{{posts.0.imagen.url}}" alt="..." /></a>
                 <div class="card-body">
                     <div class="small text-muted">{{posts.0.publicado_el}}</div>
                     <h2 class="card-title">{{posts.0.titulo}}</h2>
@@ -25,7 +25,7 @@
                     <!-- Blog post-->
                     <div class="card mb-4">
                         {% if posts.1 %}
-                        <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                        <a href="#!"><img class="card-img-top" src="{{posts.1.imagen.url}}" alt="..." /></a>
                         <div class="card-body">
                             <div class="small text-muted">{{posts.1.publicado_el}}</div>
                             <h2 class="card-title">{{posts.1.titulo}}</h2>
@@ -37,7 +37,7 @@
                     <!-- Blog post-->
                     <div class="card mb-4">
                         {% if posts.2 %}
-                        <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                        <a href="#!"><img class="card-img-top" src="{{posts.2.imagen.url}}" alt="..." /></a>
                         <div class="card-body">
                             <div class="small text-muted">{{posts.2.publicado_el}}</div>
                             <h2 class="card-title">{{posts.2.titulo}}</h2>
@@ -51,7 +51,7 @@
                     <!-- Blog post-->
                     <div class="card mb-4">
                         {% if post.3 %}
-                        <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                        <a href="#!"><img class="card-img-top" src="{{posts.3.imagen.url}}" alt="..." /></a>
                         <div class="card-body">
                             <div class="small text-muted">{{posts.3.publicado_el}}</div>
                             <h2 class="card-title">{{posts.3.titulo}}</h2>
@@ -63,7 +63,7 @@
                     <!-- Blog post-->
                     <div class="card mb-4">
                         {% if posts.4 %}
-                        <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                        <a href="#!"><img class="card-img-top" src="{{posts.4.imagen.url}}" alt="..." /></a>
                         <div class="card-body">
                             <div class="small text-muted">{{posts.4.publicado_el}}</div>
                             <h2 class="card-title">{{posts.4.titulo}}</h2>
@@ -74,7 +74,7 @@
                     </div>
                     <div class="card mb-4">
                         {% if posts.5 %}
-                        <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                        <a href="#!"><img class="card-img-top" src="{{posts.5.imagen.url}}" alt="..." /></a>
                         <div class="card-body">
                             <div class="small text-muted">{{posts.5.publicado_el}}</div>
                             <h2 class="card-title">{{posts.5.titulo}}</h2>
