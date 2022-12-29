@@ -1,0 +1,12 @@
+{% extends 'ejemplo_dos/base.html' %}
+
+{% block contenido %}
+<ul>
+{% for mensaje in object_list %}
+    <li>
+        {{mensaje.enviado_el}} - - {{mensaje.email}} -- {{mensaje.nombre}} 
+        <a href="{% url 'ejemplo-dos-mensajes-detalle' mensaje.id %}">Ver</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

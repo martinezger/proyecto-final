@@ -3,6 +3,11 @@
 {% block contenido %}
 {% if user.is_authenticated %}
     <a href="{% url 'ejemplo-dos-crear' %}">Crear Post</a>
+    {% if user.avatar.imagen %}
+        <a href="{% url 'ejemplo-dos-avatars-actualizar' user.avatar.id %}">Actualizar Avatar</a>
+    {% endif %}
+    <a href="{% url 'ejemplo-dos-users-actualizar' user.id %}">Actualizar Profile</a>
+    <a href="{% url 'ejemplo-dos-mensajes-listar' %}">Mensajes</a>
 {% endif %}
 <ul>
 {% for post in object_list %}
